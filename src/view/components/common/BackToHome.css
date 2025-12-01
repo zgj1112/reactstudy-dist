@@ -1,16 +1,13 @@
 .back-button {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 8px 16px;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  top: 24px;
+  left: 24px;
+  z-index: 11;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 999px !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 18px !important;
 }
-
-.back-button:hover {
-  background-color: #357abd;
-} 

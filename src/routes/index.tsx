@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "src/App";
+import HomePage from "@components/HomePage";
 
 // ===== 页面组件导入 =====
 // 基础组件
@@ -38,53 +39,56 @@ import Mars3dTest from "@components/24mars3dTest";
 // import BaiduMap from "@components/25baiduMapTest";
 import LeafletMap from "@components/26leafletMap";
 import UploadDemo from "@components/27upload";
+import ApiTest from "@components/28apitest";
 
-// ===== 路由配置 =====
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <App />, // 顶层容器组件
-      children: [],
+      element: <App />,
+      children: [
+        { index: true, element: <HomePage /> },
+
+        // 基础示例
+        { path: "style", element: <StyleDemo /> },
+        { path: "ref", element: <RefDemo /> },
+        { path: "props", element: <PropsDemo /> },
+        { path: "components", element: <ComponentsDemo /> },
+
+        // Hooks
+        { path: "usestate", element: <UseStateDemo /> },
+        { path: "useeffect", element: <UseEffectDemo /> },
+        { path: "customhooks", element: <CustomHooksDemo /> },
+        { path: "useReducer", element: <UseReducerDemo /> },
+        { path: "useImmer", element: <UseImmerDemo /> },
+        { path: "useSyncExternalStore", element: <UseSyncExternalStoreDemo /> },
+        { path: "useLayoutEffect", element: <UseLayoutEffectDemo /> },
+        { path: "useMemoDemo", element: <UseMemoDemo /> },
+        { path: "useTranstionDemo", element: <UseTranstionDemo /> },
+        { path: "useSuspense", element: <UseSuspenseDemo /> },
+
+        // 生命周期与渲染
+        { path: "events", element: <EventsDemo /> },
+        { path: "lifecycle", element: <LifecycleDemo /> },
+        { path: "rendering", element: <RenderingDemo /> },
+
+        // 高级特性
+        { path: "context", element: <ContextDemo /> },
+        { path: "performance", element: <PerformanceDemo /> },
+        { path: "zustand", element: <ZustandDemo /> },
+        { path: "axios", element: <AxiosDemo /> },
+        { path: "createPortal", element: <UseCreatePortalDemo /> },
+
+        // 地图页面
+        { path: "mars3dTest", element: <Mars3dTest /> },
+        // { path: "baiduMap", element: <BaiduMap /> },
+        { path: "leafletMap", element: <LeafletMap /> },
+        { path: "upload", element: <UploadDemo /> },
+        { path: "apitest", element: <ApiTest /> },
+      ],
     },
-    // 基础示例
-    { path: "style", element: <StyleDemo /> },
-    { path: "ref", element: <RefDemo /> },
-    { path: "props", element: <PropsDemo /> },
-    { path: "components", element: <ComponentsDemo /> },
-
-    // Hooks
-    { path: "usestate", element: <UseStateDemo /> },
-    { path: "useeffect", element: <UseEffectDemo /> },
-    { path: "customhooks", element: <CustomHooksDemo /> },
-
-    // 生命周期与渲染
-    { path: "events", element: <EventsDemo /> },
-    { path: "lifecycle", element: <LifecycleDemo /> },
-    { path: "rendering", element: <RenderingDemo /> },
-
-    // 高级特性
-    { path: "context", element: <ContextDemo /> },
-    { path: "performance", element: <PerformanceDemo /> },
-    { path: "zustand", element: <ZustandDemo /> },
-    { path: "axios", element: <AxiosDemo /> },
-    { path: "useReducer", element: <UseReducerDemo /> },
-    { path: "useImmer", element: <UseImmerDemo /> },
-    { path: "useSyncExternalStore", element: <UseSyncExternalStoreDemo /> },
-    { path: "useLayoutEffect", element: <UseLayoutEffectDemo /> },
-    { path: "useMemoDemo", element: <UseMemoDemo /> },
-    { path: "useTranstionDemo", element: <UseTranstionDemo /> },
-    { path: "useSuspense", element: <UseSuspenseDemo /> },
-    { path: "createPortal", element: <UseCreatePortalDemo /> },
-
-    // 地图页面
-    { path: "mars3dTest", element: <Mars3dTest /> },
-    // { path: "baiduMap", element: <BaiduMap /> },
-    { path: "leafletMap", element: <LeafletMap /> },
-    { path: "upload", element: <UploadDemo /> },
   ],
   {
-    // *** 关键修改在这里：添加 basename 选项 ***
     basename: "/react-study",
   }
 );

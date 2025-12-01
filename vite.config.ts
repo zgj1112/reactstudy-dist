@@ -5,6 +5,18 @@ import { Plugin } from "vite";
 import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: "0.0.0.0",
+    port: 8080,
+    proxy: {
+      "/api": {
+        target: "http://192.168.0.38:8888", // 目标 API 地址
+        // target: "http://139.159.152.231:40002", // 目标 API 地址
+        changeOrigin: true, // 允许跨域请求
+        rewrite: (path) => path.replace(/^\/api/, ""), // 重写路径，将 /api 前缀移除
+      },
+    },
+  },
   resolve: {
     alias: {
       src: path.resolve(__dirname, "src"),

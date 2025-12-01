@@ -9,7 +9,7 @@
 .home-container h1 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #fff;
 }
 
 /* 网格布局 */
@@ -72,7 +72,6 @@
 .card-content h2 {
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
-  color: #2c3e50;
 }
 
 /* 卡片描述文本 */
@@ -81,4 +80,4 @@
   color: #666;
   font-size: 0.9rem;
   line-height: 1.4;
-} 
+}

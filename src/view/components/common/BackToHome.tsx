@@ -1,15 +1,23 @@
 import React from "react";
+import { Button } from "antd";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import "./BackToHome.css";
 
-const BackToHome = () => {
+const BackToHome: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <button className="back-button" onClick={() => navigate("/")}>
+    <Button
+      className="back-button"
+      style={{ zIndex: 100 }}
+      type="primary"
+      icon={<ArrowLeftOutlined />}
+      onClick={() => navigate("//")}
+    >
       返回首页
-    </button>
+    </Button>
   );
 };
 
-export default BackToHome; 
+export default BackToHome;
