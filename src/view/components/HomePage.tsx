@@ -175,18 +175,18 @@ const modules: ModuleCard[] = [
     description: "leaflet测试",
     path: "/leafletMap",
   },
-  {
-    id: 27,
-    title: "API 测试",
-    description: "表格CRUD",
-    path: "/apitest",
-  },
-  {
-    id: 28,
-    title: "上传",
-    description: "上传",
-    path: "/upload",
-  },
+  // {
+  //   id: 27,
+  //   title: "API 测试",
+  //   description: "表格CRUD",
+  //   path: "/apitest",
+  // },
+  // {
+  //   id: 28,
+  //   title: "上传",
+  //   description: "上传",
+  //   path: "/upload",
+  // },
 ];
 
 /**
