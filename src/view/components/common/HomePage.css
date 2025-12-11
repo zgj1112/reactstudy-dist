@@ -18,6 +18,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   padding: 1rem;
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 /* 响应式布局 */
@@ -51,6 +52,7 @@
   min-height: 150px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 /* 卡片悬停效果 */

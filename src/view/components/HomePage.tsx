@@ -7,7 +7,8 @@ interface ModuleCard {
   id: number;
   title: string;
   description: string;
-  path: string;
+  path?: string;
+  url?: string;
 }
 
 // 模块配置数据
@@ -187,6 +188,12 @@ const modules: ModuleCard[] = [
   //   description: "上传",
   //   path: "/upload",
   // },
+  {
+    id: 30,
+    title: "低空监管项目",
+    description: "低空监管大屏",
+    url: "https://monitor-mars3d.vercel.app/",
+  },
 ];
 
 /**
@@ -198,14 +205,28 @@ const HomePage: React.FC = () => {
     <div className="home-container">
       <h1>React 集成测试</h1>
       <div className="module-grid">
-        {modules.map((module) => (
-          <Link to={module.path} key={module.id} className="module-card">
-            <div className="card-content">
-              <h2>{module.title}</h2>
-              <p>{module.description}</p>
+        (
+        {modules.map((module) =>
+          module.url ? (
+            <div
+              onClick={() => window.open(module.url)}
+              className="module-card"
+            >
+              <div className="card-content">
+                <h2>{module.title}</h2>
+                <p>{module.description}</p>
+              </div>
             </div>
-          </Link>
-        ))}
+          ) : (
+            <Link to={module.path} key={module.id} className="module-card">
+              <div className="card-content">
+                <h2>{module.title}</h2>
+                <p>{module.description}</p>
+              </div>
+            </Link>
+          )
+        )}
+        )
       </div>
     </div>
   );
