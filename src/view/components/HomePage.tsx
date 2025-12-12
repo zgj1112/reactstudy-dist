@@ -205,7 +205,6 @@ const HomePage: React.FC = () => {
     <div className="home-container">
       <h1>React 集成测试</h1>
       <div className="module-grid">
-        (
         {modules.map((module) =>
           module.url ? (
             <div
@@ -226,7 +225,6 @@ const HomePage: React.FC = () => {
             </Link>
           )
         )}
-        )
       </div>
     </div>
   );
