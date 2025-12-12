@@ -192,7 +192,7 @@ const modules: ModuleCard[] = [
     id: 30,
     title: "低空监管项目",
     description: "低空监管大屏",
-    url: "https://monitor-mars3d.vercel.app/",
+    url: "https://stevenz-project.vercel.app/",
   },
 ];
 

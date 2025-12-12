@@ -13,7 +13,7 @@ const BackToHome: React.FC = () => {
       style={{ zIndex: 100 }}
       type="primary"
       icon={<ArrowLeftOutlined />}
-      onClick={() => navigate("//")}
+      onClick={() => navigate("/")}
     >
       返回首页
     </Button>
