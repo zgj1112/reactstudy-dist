@@ -87,10 +87,11 @@ const router = createBrowserRouter(
         { path: "apitest", element: <ApiTest /> },
       ],
     },
-  ],
-  {
-    basename: "/react-study",
-  }
+  ]
+  // ,
+  // {
+  //   basename: "/react-study",
+  // }
 );
 
 export default router;

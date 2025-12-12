@@ -29,5 +29,5 @@ export default defineConfig({
     extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
   },
   plugins: [react(), mars3dPlugin() as unknown as Plugin],
-  base: "/react-study/",
+  // base: "/react-study/",
 });
