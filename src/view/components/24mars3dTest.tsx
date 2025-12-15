@@ -42,6 +42,7 @@ const Mars3dTest: React.FC = () => {
   let mapx: mars3d.Map = null;
   let graphicLayer: mars3d.layer.GraphicLayer = null;
   // const [map3d, setmap3d] = useState<boolean>(true);
+ const mLoading = message.loading('地图加载中...', 0);
   const initMap = async () => {
     // const Cesium = mars3d.Cesium;
     mapx = new mars3d.Map("mars3dContainer", {
@@ -99,10 +100,10 @@ const Mars3dTest: React.FC = () => {
         },
       ],
     });
-    // mapx.on(mars3d.EventType.load, function (event) {
-    //   // console.log(2222, mapx);
-
-    // });
+    mapx.on(mars3d.EventType.load, function (event) {
+      mLoading()
+      message.success("地图加载完成");
+    });
     addModelLayer();
     addGraphicLayer();
     addAnimationWall();
