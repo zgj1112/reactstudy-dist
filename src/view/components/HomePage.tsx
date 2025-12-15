@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./common/HomePage.css";
 
+import svg5 from "@assets/master/5.svg";
+import svg6 from "@assets/master/6.svg";
+import svg7 from "@assets/master/7.svg";
 // 定义卡片数据结构
 interface ModuleCard {
   id: number;
   title: string;
   description: string;
+  icon?: string;
   path?: string;
   url?: string;
 }
@@ -162,6 +166,7 @@ const modules: ModuleCard[] = [
     id: 24,
     title: "地图测试",
     description: "mars3d地图测试",
+    icon: svg5,
     path: "/mars3dTest",
   },
   // {
@@ -174,6 +179,7 @@ const modules: ModuleCard[] = [
     id: 26,
     title: "leaflet测试",
     description: "leaflet测试",
+    icon: svg6,
     path: "/leafletMap",
   },
   // {
@@ -192,6 +198,7 @@ const modules: ModuleCard[] = [
     id: 30,
     title: "低空监管项目",
     description: "低空监管大屏",
+    icon: svg7,
     url: "https://stevenz-project.vercel.app/",
   },
 ];
@@ -204,27 +211,36 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-container">
       <h1>React 集成测试</h1>
+
       <div className="module-grid">
-        {modules.map((module) =>
-          module.url ? (
-            <div
-              onClick={() => window.open(module.url)}
-              className="module-card"
-            >
-              <div className="card-content">
+        {modules.map((module) => {
+          const CardContent = (
+            <div className="card-content">
+              <div className="d-flex a-center">
+                {/* <img src={`${module.icon}`} style={{ width: "30px" }} alt="" /> */}
                 <h2>{module.title}</h2>
+              </div>
+              <div className="d-flex a-center">
+                <img src={`${module.icon}`} style={{ width: "30px" }} alt="" />
                 <p>{module.description}</p>
               </div>
             </div>
+          );
+
+          return module.url ? (
+            <div
+              key={module.id}
+              className="module-card"
+              onClick={() => window.open(module.url)}
+            >
+              {CardContent}
+            </div>
           ) : (
-            <Link to={module.path} key={module.id} className="module-card">
-              <div className="card-content">
-                <h2>{module.title}</h2>
-                <p>{module.description}</p>
-              </div>
+            <Link key={module.id} to={module.path} className="module-card">
+              {CardContent}
             </Link>
-          )
-        )}
+          );
+        })}
       </div>
     </div>
   );

@@ -61,3 +61,30 @@ img {
   display: block;
   clear: both;
 }
+
+//steven_z的全局样式
+.d-flex {
+  display: flex;
+}
+.d-col {
+  display: flex;
+  flex-direction: column;
+}
+.j-center{
+  justify-content: center;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+.gap-40 {
+  gap: 40px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.a-center {
+  align-items: center;
+}
