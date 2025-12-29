@@ -40,7 +40,7 @@ import Mars3dTest from "@components/24mars3dTest";
 import LeafletMap from "@components/26leafletMap";
 import UploadDemo from "@components/27upload";
 import ApiTest from "@components/28apitest";
-
+import CodeTest from "@components/29codetest";
 const router = createBrowserRouter(
   [
     {
@@ -85,6 +85,7 @@ const router = createBrowserRouter(
         { path: "leafletMap", element: <LeafletMap /> },
         { path: "upload", element: <UploadDemo /> },
         { path: "apitest", element: <ApiTest /> },
+        { path: "codeTest", element: <CodeTest /> },
       ],
     },
   ]

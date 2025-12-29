@@ -1,5 +1,5 @@
 // import "../App.css";
-// import BackToHome from './common/BackToHome';
+// import {BackToHome} from './common/BackToHome.css';
 
 function StyleDemo() {
   const name = "Hello Word";

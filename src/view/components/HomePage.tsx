@@ -5,6 +5,7 @@ import "./common/HomePage.css";
 import svg5 from "@assets/master/5.svg";
 import svg6 from "@assets/master/6.svg";
 import svg7 from "@assets/master/7.svg";
+import svg8 from "@assets/master/8.svg";
 // 定义卡片数据结构
 interface ModuleCard {
   id: number;
@@ -194,6 +195,13 @@ const modules: ModuleCard[] = [
   //   description: "上传",
   //   path: "/upload",
   // },
+    {
+    id: 29,
+    title: "代码组件测试",
+    description: "代码组件测试",
+    icon: svg8,
+    path: "/codeTest",
+  },
   {
     id: 30,
     title: "低空监管项目",

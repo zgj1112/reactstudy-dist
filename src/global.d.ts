@@ -17,3 +17,9 @@ declare module '*.jpg' {
   const value: string;
   export default value;
 }
+
+// CSS Modules 声明
+declare module '*.module.css' {
+  const classes: { readonly [key: string]: string };
+  export default classes;
+}
