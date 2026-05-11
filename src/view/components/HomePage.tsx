@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./common/HomePage.css";
+import AIAssistant from "./common/AIAssistant";
 
 import svg5 from "@assets/master/5.svg";
 import svg6 from "@assets/master/6.svg";
 import svg7 from "@assets/master/7.svg";
 import svg8 from "@assets/master/8.svg";
+
 // 定义卡片数据结构
 interface ModuleCard {
   id: number;
@@ -22,33 +24,33 @@ const modules: ModuleCard[] = [
   // {
   //   id: 1,
   //   title: "样式处理",
-  //   description: "React中CSS样式的多种使用方式",
+  //   description: "React 中 CSS 样式的多种使用方式",
   //   path: "/style",
   // },
   // {
   //   id: 2,
-  //   title: "Ref使用",
-  //   description: "操作DOM和组件实例的引用",
+  //   title: "Ref 使用",
+  //   description: "操作 DOM 和组件实例的引用",
   //   path: "/ref",
   // },
   // {
   //   id: 3,
-  //   title: "Props传递",
+  //   title: "Props 传递",
   //   description: "组件间的数据和方法传递",
   //   path: "/props",
   // },
   // {
   //   id: 4,
   //   title: "组件基础",
-  //   description: "React组件的基本概念和使用方法",
+  //   description: "React 组件的基本概念和使用方法",
   //   path: "/components",
   // },
 
-  // // Hooks相关
+  // Hooks 相关
   // {
   //   id: 5,
   //   title: "useState",
-  //   description: "使用Hook管理组件状态",
+  //   description: "使用 Hook 管理组件状态",
   //   path: "/usestate",
   // },
   // {
@@ -59,16 +61,16 @@ const modules: ModuleCard[] = [
   // },
   // {
   //   id: 10,
-  //   title: "自定义Hooks",
+  //   title: "自定义 Hooks",
   //   description: "封装和复用组件逻辑",
   //   path: "/customhooks",
   // },
 
-  // // 生命周期与事件
+  // 生命周期与事件
   // {
   //   id: 7,
   //   title: "事件处理",
-  //   description: "React事件系统的使用方法",
+  //   description: "React 事件系统的使用方法",
   //   path: "/events",
   // },
   // {
@@ -84,22 +86,22 @@ const modules: ModuleCard[] = [
   //   path: "/rendering",
   // },
 
-  // // 高级特性
+  // 高级特性
   // {
   //   id: 11,
-  //   title: "Context使用",
+  //   title: "Context 使用",
   //   description: "跨层级的状态共享机制",
   //   path: "/context",
   // },
   // {
   //   id: 12,
   //   title: "性能优化",
-  //   description: "提升React应用性能的关键技术",
+  //   description: "提升 React 应用性能的关键技巧",
   //   path: "/performance",
   // },
   // {
   //   id: 13,
-  //   title: "zustand状态管理",
+  //   title: "zustand 状态管理",
   //   description: "状态管理解决方案",
   //   path: "/zustand",
   // },
@@ -111,7 +113,7 @@ const modules: ModuleCard[] = [
   // // },
   // {
   //   id: 15,
-  //   title: "axios接口调用",
+  //   title: "axios 接口调用",
   //   description: "接口调用",
   //   path: "/axios",
   // },
@@ -166,7 +168,7 @@ const modules: ModuleCard[] = [
   {
     id: 24,
     title: "地图测试",
-    description: "mars3d地图测试",
+    description: "mars3d 地图测试",
     icon: svg5,
     path: "/mars3dTest",
   },
@@ -178,15 +180,15 @@ const modules: ModuleCard[] = [
   // },
   {
     id: 26,
-    title: "leaflet测试",
-    description: "leaflet测试",
+    title: "Leaflet 测试",
+    description: "leaflet 地图测试",
     icon: svg6,
     path: "/leafletMap",
   },
   // {
   //   id: 27,
   //   title: "API 测试",
-  //   description: "表格CRUD",
+  //   description: "表格 CRUD",
   //   path: "/apitest",
   // },
   // {
@@ -195,10 +197,10 @@ const modules: ModuleCard[] = [
   //   description: "上传",
   //   path: "/upload",
   // },
-    {
+  {
     id: 29,
     title: "代码组件测试",
-    description: "代码组件测试",
+    description: "前端代码编辑与运行测试",
     icon: svg8,
     path: "/codeTest",
   },
@@ -219,17 +221,19 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-container">
       <h1>React 集成测试</h1>
+      <AIAssistant />
 
       <div className="module-grid">
         {modules.map((module) => {
           const CardContent = (
             <div className="card-content">
               <div className="d-flex a-center">
-                {/* <img src={`${module.icon}`} style={{ width: "30px" }} alt="" /> */}
                 <h2>{module.title}</h2>
               </div>
               <div className="d-flex a-center">
-                <img src={`${module.icon}`} style={{ width: "30px" }} alt="" />
+                {module.icon && (
+                  <img src={module.icon} style={{ width: "30px" }} alt="" />
+                )}
                 <p>{module.description}</p>
               </div>
             </div>
@@ -239,12 +243,16 @@ const HomePage: React.FC = () => {
             <div
               key={module.id}
               className="module-card"
-              onClick={() => window.open(module.url)}
+              onClick={() => window.open(module.url, "_blank")}
             >
               {CardContent}
             </div>
           ) : (
-            <Link key={module.id} to={module.path} className="module-card">
+            <Link
+              key={module.id}
+              to={module.path ?? "/"}
+              className="module-card"
+            >
               {CardContent}
             </Link>
           );

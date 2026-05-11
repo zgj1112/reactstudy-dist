@@ -1,0 +1,235 @@
+.ai-assistant {
+  margin-bottom: 2rem;
+}
+
+.ai-assistant__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.18), transparent 30%),
+    rgba(15, 23, 42, 0.88);
+  color: #e2e8f0;
+}
+
+.ai-assistant__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 0.9rem;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.16);
+  color: #7dd3fc;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ai-assistant__hero h2 {
+  margin: 0 0 0.75rem;
+  color: #f8fafc;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.ai-assistant__hero p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.ai-assistant__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-self: end;
+}
+
+.ai-assistant__meta span {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 16px;
+  background: rgba(15, 118, 110, 0.12);
+  color: #dbeafe;
+}
+
+.ai-assistant__panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+}
+
+.ai-assistant__messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.ai-assistant__message {
+  max-width: min(85%, 720px);
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+}
+
+.ai-assistant__message p {
+  margin: 0.45rem 0 0;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: #0f172a;
+}
+
+.ai-assistant__message--assistant {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+}
+
+.ai-assistant__message--user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+}
+
+.ai-assistant__message--user p,
+.ai-assistant__message--user .ai-assistant__role {
+  color: #f8fafc;
+}
+
+.ai-assistant__role {
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.ai-assistant__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.ai-assistant__chip {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 999px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-assistant__chip:hover:not(:disabled) {
+  border-color: rgba(14, 165, 233, 0.5);
+  transform: translateY(-1px);
+}
+
+.ai-assistant__composer textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 18px;
+  resize: vertical;
+  outline: none;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.ai-assistant__composer textarea:focus {
+  border-color: rgba(14, 165, 233, 0.55);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12);
+}
+
+.ai-assistant__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+
+.ai-assistant__voice,
+.ai-assistant__ghost,
+.ai-assistant__submit {
+  min-width: 120px;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ai-assistant__voice {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.ai-assistant__voice--active {
+  background: #ef4444;
+  color: #fff;
+}
+
+.ai-assistant__ghost {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.ai-assistant__submit {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #fff;
+}
+
+.ai-assistant__ghost:disabled,
+.ai-assistant__voice:disabled,
+.ai-assistant__submit:disabled,
+.ai-assistant__chip:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ai-assistant__hint {
+  margin-top: 0.75rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.ai-assistant__error {
+  margin-top: 0.75rem;
+  color: #dc2626;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .ai-assistant__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-assistant__message {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-assistant__hero,
+  .ai-assistant__panel {
+    border-radius: 20px;
+  }
+
+  .ai-assistant__hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .ai-assistant__toolbar {
+    flex-direction: column;
+  }
+
+  .ai-assistant__ghost,
+  .ai-assistant__submit {
+    width: 100%;
+  }
+}
