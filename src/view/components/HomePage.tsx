@@ -205,6 +205,12 @@ const modules: ModuleCard[] = [
     path: "/codeTest",
   },
   {
+    id: 31,
+    title: "高斯泼溅查看器",
+    description: "Spark 3D Gaussian Splatting 模型预览",
+    path: "/spark",
+  },
+  {
     id: 30,
     title: "低空监管项目",
     description: "低空监管大屏",

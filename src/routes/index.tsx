@@ -41,6 +41,7 @@ import LeafletMap from "@components/26leafletMap";
 import UploadDemo from "@components/27upload";
 import ApiTest from "@components/28apitest";
 import CodeTest from "@components/29codetest";
+import SparkDemo from "@components/30spark";
 const router = createBrowserRouter(
   [
     {
@@ -86,6 +87,7 @@ const router = createBrowserRouter(
         { path: "upload", element: <UploadDemo /> },
         { path: "apitest", element: <ApiTest /> },
         { path: "codeTest", element: <CodeTest /> },
+        { path: "spark", element: <SparkDemo /> },
       ],
     },
   ]
